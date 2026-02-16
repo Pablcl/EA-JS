@@ -33,3 +33,4 @@ const students = [
 ];
 
 export { students };
+console.log(students);

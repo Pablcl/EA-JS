@@ -11,9 +11,25 @@ fetch('https://jsonplaceholder.typicode.com/users/')
       // YOUR CODE STARTS HERE
       console.log("--- Processed Users ---");
       // 1. Filter even IDs
+      const evenUsers = users.filter(user => user.id % 2 === 0);
+      console.log(evenUsers);
       // 2. Map to clean objects {id, name, city}
+      const mappedUsers = evenUsers.map(user => ({
+        id: user.id,
+        name: user.name,
+        city: user.address.city
+      }));
+      console.log(mappedUsers);
       // 3. Add Guest User at the start using Spread (...)
-      
+      const guestUser = {
+        id: 0,
+        name: "Guest User",
+        city: "Unknown"
+      };
+      const usersWithGuest = [guestUser, ...mappedUsers];
+      console.log(usersWithGuest);
       console.log("--- Statistics ---");
       // 4. Reduce to count total characters in names
+      const totalCharacters = usersWithGuest.reduce((total, user) => total + user.name.length, 0);    
+      console.log("Total characters in all usernames:", totalCharacters);
   });
