@@ -6,8 +6,8 @@ for(let i = 0; i < students.length; i++) {
 }
 
 // Functional Approach
-students.forEach(function (student, index, students) {
-  console.log(student, index, students)
+students.forEach(function (student, index) {
+  console.log(student, index)
 })
 
 // Functional Approach with Arrow Function

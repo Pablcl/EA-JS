@@ -61,13 +61,19 @@ const student2 = {
   
 // Arrow functions do NOT have their own 'this'. 
 // They inherit 'this' in this case, the global scope
-  sayHelloArrow: () => {
-    console.log("Hello, I am " + this.name);
+  //sayHelloArrow: () => {
+    //console.log("Hello, I am " + this.name);
+  //}
+
+  sayHelloArrowCorrect: (name) => {
+    console.log("Hello, I am " + name);
   }
+
 };
 
 student2.sayHelloRegular(); // Output: "Hello, I am Andrew"
 student2.sayHelloArrow();   // Output: "Hello, I am undefined" (Key point for explaining scope!)
+student2.sayHelloArrowCorrect(student2.name);
 console.log();
 
 // ----------------------- Single-threaded -----------------------
